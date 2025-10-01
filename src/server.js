@@ -22,7 +22,7 @@ let nextId = 3;
 // Routes
 app.get('/healthz', (req, res) => res.status(200).json({ status: 'ok' }));
 
-app.get('/api/products', (req, res) => res.json(products));
+app.get('/products', (req, res) => res.json(products));
 
 app.post('/api/products', (req, res) => {
   const { name, price } = req.body || {};
