@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product App</title>
+</head>
+<body>
+<h1>Selamat Datang di Product App</h1>
+<p>Ini aplikasi contoh untuk latihan Node.js + Nginx Reverse Proxy.</p>
+
+<h2>Daftar Produk</h2>
+<pre id="products">memuat...</pre>
+
+<script>
+fetch('/api/products')
+.then(res => res.json())
+.then(data => document.getElementById('products').textContent = JSON.stringify(data, null, 2))
+.catch(err => document.getElementById('products').textContent = err.message);
+</script>
+</body>
+</html>

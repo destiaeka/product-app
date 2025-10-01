@@ -1,0 +1,25 @@
+version: '3.3'
+
+services:
+  app:
+    build: 
+      context: .
+      dockerfile: dockerfile.nginx
+    container_name: product-app
+    ports:
+      - "3000:3000"
+    networks:
+      - mynet
+  
+  nginx:
+    build: 
+      context: .
+      dockerfile: dockerfile.nodejs
+    container_name: product-nginx
+    ports:
+      - "8080:80"
+    networks:
+      - mynet
+
+networks:
+  mynet:
