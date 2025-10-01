@@ -13,7 +13,7 @@
 <pre id="products">memuat...</pre>
 
 <script>
-fetch('/api/products')
+fetch('/products')
 .then(res => res.json())
 .then(data => document.getElementById('products').textContent = JSON.stringify(data, null, 2))
 .catch(err => document.getElementById('products').textContent = err.message);
